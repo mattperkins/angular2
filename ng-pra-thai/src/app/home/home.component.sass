@@ -1,0 +1,90 @@
+@import '../sass-partials/_breakpoints'
+$txt-white: #f7f7f7
+$white: #fff
+$greySeven: #777
+
+$blockHeight: 550px
+
+/* home */
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4,
+  position: relative
+  opacity: 0.65
+  background-attachment: scroll
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+.bgimg-1
+  background-attachment: fixed
+  height: 100vh
+.bgimg-1
+  background-image: url("../../assets/img/food/food-5.jpg")
+  min-height: 100%
+.bgimg-2
+  background-image: url("../../assets/img/food/food-4.jpg")
+  min-height: $blockHeight
+
+.bgimg-3
+  background-image: url("../../assets/img/food/food-3.jpg")
+  min-height: $blockHeight
+
+.bgimg-4
+  background-image: url("../../assets/img/food/food-1.jpg")
+  min-height: $blockHeight
+
+
+.caption
+  position: absolute
+  left: 0
+  top: 50%
+  width: 100%
+  text-align: center
+  +break(768px)
+    margin-top: -10%
+  &--delicious
+    top: 45%
+    color: $txt-white
+  span.border
+    position: relative
+    padding: 18px
+    font-size: 25px
+    letter-spacing: 10px
+    &.pra-thai
+      background-color: #111
+      color: $white
+    &.txt-white
+      background-color:transparent
+      color: $txt-white
+// Turn off parallax scrolling for tablets and phones
+@media only screen and (max-device-width: 1024px)
+  .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4
+    background-attachment: scroll
+  // img
+  //   margin-top: -50%
+  //   width: 280px
+  //   height: auto
+section.hero
+  color: $greySeven
+  background-color: $white
+  padding: 50px
+.hero-txt
+  font-size: 2.4em
+  color: $greySeven 
+  +break(768px)
+    font-size: 1.33em
+.customer
+  font-size: 1.9em
+  font-weight: bold
+  +break(768px)
+    font-size: 1.33em
+section.quote-block-outer
+  position: relative
+  background-color: #282E34 
+  padding: 50px 40px
+.quote-block-inner
+  max-width: 1140px
+  margin: 0 auto
+  color: #ddd
+.quote-txt
+  font-size: 1.8em
+  +break(768px)
+    font-size: 1.33em

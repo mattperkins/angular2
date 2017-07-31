@@ -1,0 +1,21 @@
+    <label>Server Name</label>
+    <input type="text" class="form-control" (input)="inputGo($event)">
+
+    <p>{{inputFill}}</p>
+
+    <button class="btn btn-primary" (click)="onServerCreation()">Ask for new server</button>
+
+    <p>{{serverCreation}}</p>
+
+    <p>{{ newWord }}</p>
+    
+    <p [innerText]="!serverSwitcher"></p>
+
+    <button [disabled]="!serverSwitcher" class="btn btn-danger">Server Switcher</button>
+    <br>
+    Server Id: {{serverId}} 
+    <br>
+    Server Status: {{wizard()}}
+    <br>
+    {{8*8}}
+  

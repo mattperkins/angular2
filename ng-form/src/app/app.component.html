@@ -1,0 +1,43 @@
+<div *ngIf="!name; else forminfo">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+  <!--<form [formGroup]="rForm""> // replace above when using on get/post/server -->
+    <div class="form-container">
+      <div class="row columns">
+        <h1></h1>
+
+        <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ nameAlert }}</div>
+        <label>
+          Name
+          <input type="text" formControlName="name">
+        </label>
+        
+
+        <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">{{ emailAlert }}</div>
+         <label>
+          Email
+          <input type="text" formControlName="email">
+        </label>
+        
+
+        <label>
+        <textarea class="push-up" formControlName="message" cols="30" rows="10"></textarea>
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['message'].valid && rForm.controls['message'].touched">{{ messageAlert }}</div>
+
+
+        <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- local return value -->
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+      <h1>{{ name }}</h1>
+      <h2> {{ email }} </h2>
+      <p>{{ message }}</p>
+    </div>
+  </div>
+</ng-template>
